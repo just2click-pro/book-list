@@ -4,44 +4,39 @@ import ReactDOM from 'react-dom'
 import './index.css'
 
 // Setup
-const firstBook = {
-  img: 'https://images-na.ssl-images-amazon.com/images/I/81V8R5aqDYL._AC_UL200_SR200,200_.jpg',
-  imgAlt: 'American Marxism',
-  author: 'Mark R Levin',
-  title: 'American Marxism',
-}
-
-const secondBook = {
-  img: 'https://images-na.ssl-images-amazon.com/images/I/91-EIJiYneL._AC_UL200_SR200,200_.jpg',
-  imgAlt: 'Atomic Habits',
-  author: 'James Clear',
-  title:
-    'Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones',
-}
+const books = [
+  {
+    id: 1,
+    img: 'https://images-na.ssl-images-amazon.com/images/I/81V8R5aqDYL._AC_UL200_SR200,200_.jpg',
+    imgAlt: 'American Marxism',
+    author: 'Mark R Levin',
+    title: 'American Marxism',
+  },
+  {
+    id: 2,
+    img: 'https://images-na.ssl-images-amazon.com/images/I/91-EIJiYneL._AC_UL200_SR200,200_.jpg',
+    imgAlt: 'Atomic Habits',
+    author: 'James Clear',
+    title:
+      'Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones',
+  },
+  {
+    id: 3,
+    img: 'https://images-na.ssl-images-amazon.com/images/I/51PRQuO-xjL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg',
+    imgAlt: 'If Animals Kissed Good Night',
+    author: 'Ann Whitford Paul',
+    title: 'If Animals Kissed Good Night',
+  },
+]
 
 const BookList = () => {
   return (
     <>
       <header></header>
       <section className='booklist'>
-        <Book
-          img={firstBook.img}
-          imgAlt={firstBook.imgAlt}
-          author={firstBook.author}
-          title={firstBook.title}
-        >
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-            aliquam facere! Dignissimos veniam necessitatibus repudiandae neque
-            iure cumque id blanditiis!
-          </p>
-        </Book>
-        <Book
-          img={secondBook.img}
-          imgAlt={secondBook.imgAlt}
-          author={secondBook.author}
-          title={secondBook.title}
-        />
+        {books.map((book) => {
+          return <Book key={book.id} {...book} />
+        })}
       </section>
       <footer></footer>
     </>
