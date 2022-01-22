@@ -16,37 +16,19 @@ const BookList = () => {
   );
 };
 
+const author = "James Clear";
+
 const Book = () => {
+  const title =
+    "Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones";
   return (
     <article className="book">
-      <Image />
-      <Title />
-      <Author />
+      <img
+        src="https://images-na.ssl-images-amazon.com/images/I/91-EIJiYneL._AC_UL200_SR200,200_.jpg"
+        alt="Atomic Habits"></img>
+      <h1>{title}</h1>
+      <h4>{author}</h4>
     </article>
-  );
-};
-
-const Image = () => {
-  return (
-    <img
-      src="https://images-na.ssl-images-amazon.com/images/I/91-EIJiYneL._AC_UL200_SR200,200_.jpg"
-      alt="Atomic Habits"></img>
-  );
-};
-
-const Author = () => {
-  return (
-    <h4 style={{ color: "#617d98", fontSize: "0.75rem", marginTop: "0.25rem" }}>
-      James Clear
-    </h4>
-  );
-};
-
-const Title = () => {
-  return (
-    <h1>
-      Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones
-    </h1>
   );
 };
 
