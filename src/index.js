@@ -20,16 +20,18 @@ const books = [
   },
 ]
 
-const names = ['Mai', 'Racheli', 'Dror']
-const namesMap = names.map((name) => {
-  return <h1>{name}</h1>
-})
-
 const BookList = () => {
   return (
     <>
       <header></header>
-      <section className='booklist'>{namesMap}</section>
+      <section className='booklist'>
+        {books.map((book) => {
+          const { img, imgAlt, author, title } = book
+          return (
+            <Book img={img} imgAlt={imgAlt} author={author} title={title} />
+          )
+        })}
+      </section>
       <footer></footer>
     </>
   )
