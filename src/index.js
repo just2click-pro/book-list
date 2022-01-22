@@ -18,6 +18,12 @@ const books = [
     title:
       'Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones',
   },
+  {
+    img: 'https://images-na.ssl-images-amazon.com/images/I/51PRQuO-xjL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg',
+    imgAlt: 'If Animals Kissed Good Night',
+    author: 'Ann Whitford Paul',
+    title: 'If Animals Kissed Good Night',
+  },
 ]
 
 const BookList = () => {
@@ -26,10 +32,7 @@ const BookList = () => {
       <header></header>
       <section className='booklist'>
         {books.map((book) => {
-          const { img, imgAlt, author, title } = book
-          return (
-            <Book img={img} imgAlt={imgAlt} author={author} title={title} />
-          )
+          return <Book book={book} />
         })}
       </section>
       <footer></footer>
@@ -38,7 +41,7 @@ const BookList = () => {
 }
 
 const Book = (props) => {
-  const { img, imgAlt, title, author } = props
+  const { img, imgAlt, title, author } = props.book
   return (
     <article className='book'>
       <img src={img} alt={imgAlt}></img>
